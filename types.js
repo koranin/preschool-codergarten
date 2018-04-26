@@ -1,5 +1,3 @@
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
-
 const { assert } = console;
 
 let undefinedVar;
@@ -30,3 +28,4 @@ assert(typeof [] === 'object');
 assert(typeof null === 'object');
 assert(typeof new function () { } === 'object');
 assert(typeof new class { } === 'object');
+
