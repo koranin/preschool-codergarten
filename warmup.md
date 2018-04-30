@@ -50,13 +50,13 @@ typeof new class {}
 
 // Object.keys are ['0', '1']
 const obj = { 0: 'a', 1: 'b' }
-Object.keys(obj) // ['0', '1']
-Object.values(obj) // ['a', 'b']
-Object.entries(obj) // [['0', 'a'], ['1', 'b']]
+Object.keys(obj)     // ['0', '1']
+Object.values(obj)   // ['a', 'b']
+Object.entries(obj)  // [['0', 'a'], ['1', 'b']]
 
 const arr = ['a', 'b']
-Object.keys(obj) // ['0', '1']
-Object.values(obj) // ['a', 'b']
-Object.entries(obj) // [['0', 'a'], ['1', 'b']]
+Object.keys(obj)     // ['0', '1']
+Object.values(obj)   // ['a', 'b']
+Object.entries(obj)  // [['0', 'a'], ['1', 'b']]
 
 ```
