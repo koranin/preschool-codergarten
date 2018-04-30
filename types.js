@@ -1,31 +1,38 @@
-const { assert } = console;
+console.log('\x1b[37m', 'typeof');
+const ok = (value) => value ? console.log('\x1b[32m', 'ok') : console.log('\x1b[31m', 'no');
 
 let undefinedVar;
-assert(undefinedVar === undefined);
-assert({}.a === undefined);
-assert([][0] === undefined);
+ok(undefinedVar === undefined);
+ok({}.a === undefined);
+ok(() => [][0] === undefined);
 
-assert(typeof undefinedVar === 'undefined');
-assert(typeof undefined === 'undefined');
-assert(typeof a === 'undefined');
-assert(typeof {}.a === 'undefined');
-assert(typeof [][0] === 'undefined');
+console.log('\x1b[37m', 'undefined');
+ok(typeof undefinedVar === 'undefined');
+ok(typeof undefined === 'undefined');
+ok(typeof a === 'undefined');
+ok(typeof {}.a === 'undefined');
+ok(typeof [][0] === 'undefined');
 
-assert(typeof true === 'boolean');
+console.log('\x1b[37m', 'boolean');
+ok(typeof true === 'boolean');
 
-assert(typeof '' === 'string');
+console.log('\x1b[37m', 'string');
+ok(typeof '' === 'string');
 
-assert(typeof 0 === 'number');
-assert(typeof 0.1 === 'number');
-assert(typeof NaN === 'number');
+console.log('\x1b[37m', 'number');
+ok(typeof 0 === 'number');
+ok(typeof 0.1 === 'number');
+ok(typeof NaN === 'number');
 
-assert(typeof (() => { }) === 'function');
-assert(typeof function () { } === 'function');
-assert(typeof class { } === 'function');
+console.log('\x1b[37m', 'function');
+ok(typeof (() => { }) === 'function');
+ok(typeof function () { } === 'function');
+ok(typeof class { } === 'function');
 
-assert(typeof {} === 'object');
-assert(typeof [] === 'object');
-assert(typeof null === 'object');
-assert(typeof new function () { } === 'object');
-assert(typeof new class { } === 'object');
+console.log('\x1b[37m', 'object');
+ok(typeof {} === 'object');
+ok(typeof [] === 'object');
+ok(typeof null === 'object');
+ok(typeof new function () { } === 'object');
+ok(typeof new class { } === 'object');
 

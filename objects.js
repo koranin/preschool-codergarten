@@ -1,21 +1,34 @@
-const { assert, log } = console;
+//const { assert, log } = console;
+const assert = require('assert');
 
-assert({ 1: 'a' }[1] === 'a');
-assert({ 1: 'a' }['1'] === 'a');
-assert({ '1': 'a' }[1] === 'a');
-assert({ '1': 'a' }['1'] === 'a');
+({ 1: 'a' }[1] === 'a');
+({ 1: 'a' }['1'] === 'a');
+({ '1': 'a' }[1] === 'a');
+({ '1': 'a' }['1'] === 'a');
 
 //console.log(Object.entries({ a: 'x', b: 'y' }).map(([k, v]) => k + v));
 
-const toKv = ([k, v]) => k + v;
-assert(Object.entries({ a: 1 }).map(toKv)[0] = 'a1');
+assert.deepStrictEqual({1: 'a'}, {'1': 'a'});
+assert.notDeepStrictEqual({0: 'a'}, ['a']);
 
+assert.deepStrictEqual(
+  Object.keys({0: 'a', 1: 'b'}), 
+  ['0', '1']);
+assert.deepStrictEqual(
+  Object.keys(['a', 'b']), 
+  ['0', '1']);
 
+assert.deepStrictEqual(
+  Object.values({0: 'a', 1: 'b'}), 
+  ['a', 'b']);
+assert.deepStrictEqual(
+  Object.values(['a', 'b']),
+  ['a', 'b']);
 
+assert.deepStrictEqual(
+  Object.entries({0: 'a', 1: 'b'}), 
+  [ ['0', 'a'], ['1', 'b'] ]);
+assert.deepStrictEqual(
+  Object.entries(['a', 'b']), 
+  [ ['0', 'a'], ['1', 'b'] ]);
 
-console.log(Object.entries({ a: 'x', b: 'y' }));
-console.log(Object.entries({ 1: 'a', 2: 'b' }));
-console.log({ 1: 'a' }[1]);
-console.log({ 1: 'a' }['1']);
-console.log(['a'][0]);
-console.log(['a']['0']);
