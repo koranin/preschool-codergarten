@@ -92,9 +92,9 @@ arr.reduce((acc, a) => acc + a, 0) // 22
 arr.forEach(console.log)
 
 // join - Joins all elements into a string.
-[5, 6].join() // '4,5,5,6'
-[5, 6].join('') // '4556'
-[5, 6].join('-') // '4-5-5-6'
+arr.join() // '4,5,5,6'
+arr.join('') // '4556'
+arr.join('-') // '4-5-5-6'
 
 // mutable operations
 const mu = (fn) => {
