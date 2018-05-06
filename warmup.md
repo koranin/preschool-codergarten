@@ -6,7 +6,7 @@ If your terminal is overflow and you wanna clear screen use `console.log('\033c'
 ## Index
 * [Types](#types)
 * [Objects](#objects)
-* [Array](#array)
+* [Array](#arrays)
 
 ## Types <a name="types"></a>
 
@@ -86,9 +86,9 @@ arr.indexOf(5) // 1
 arr.lastIndexOf(5) // 2
 
 // common operations
-arr.filter(a => a > 5) // [6, 7]
-arr.map(a => a + 1) // [5, 6, 7, 8]
-arr.reduce((acc, a) => acc + a, 0) // 22
+arr.filter(a => a > 5) // [6]
+arr.map(a => a + 1) // [5, 6, 6, 7]
+arr.reduce((acc, a) => acc + a, 0) // 21
 arr.forEach(console.log)
 
 // join - Joins all elements into a string.
@@ -104,26 +104,26 @@ const mu = (fn) => {
 }
 
 mu(a => a.fill(5)) // [5, 5, 5, 5]
-mu(a => a.push(7)) // 5
-mu(a => a.pop()) // 6
-mu(a => a.unshift(3))
-mu(a => a.shift())
+// push - Append element.
+mu(a => a.push(7)) // 5 [4, 5, 5, 6, 7]
+// unshift - Prepend element.
+mu(a => a.unshift(3)) // 5 [3, 4, 5, 5, 6]
+// pop - Remove last element.
+mu(a => a.pop()) // 6 [4, 5, 5]
+// shift - Remove first element.
+mu(a => a.shift() // 4 [5, 5, 6]
 
-mu(a => a.reverse())
-mu(a => a.splice(2, 0, 'a'))
+mu(a => a.reverse()) // [6, 5, 5, 4] [6, 5, 5, 4]
+mu(a => a.splice(2, 0, 7)) // [] [4, 5, 7, 5, 6]
 
 ```
 
 ## for...in
 
-for (let a in {a: 5, b: 6}) {
-  console.log(a)
-}
+for (let a in {a: 5, b: 6}) console.log(a)
 
 ## for..of
 
-for (let a in [5, 6]) {
-  console.log(a)
-}
+for (let a in [5, 6]) console.log(a)
 
 ##
