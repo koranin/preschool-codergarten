@@ -6,7 +6,7 @@ If your terminal is overflow and you wanna clear screen use `console.log('\033c'
 ## Index
 * [Types](#types)
 * [Objects](#objects)
-* [Array](#arrays)
+* [Arrays](#arrays)
 
 ## Types <a name="types"></a>
 
