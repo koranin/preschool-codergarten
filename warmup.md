@@ -59,12 +59,14 @@ Object.values(obj)   // ['a', 'b']
 Object.entries(obj)  // [['0', 'a'], ['1', 'b']]
 
 const arr = ['a', 'b']
-Object.keys(obj)     // ['0', '1']
-Object.values(obj)   // ['a', 'b']
-Object.entries(obj)  // [['0', 'a'], ['1', 'b']]
+Object.keys(arr)     // ['0', '1']
+Object.values(arr)   // ['a', 'b']
+Object.entries(arr)  // [['0', 'a'], ['1', 'b']]
 ```
 
 ## Arrays <a name="arrays"></a>
+
+### Methods that don't mutate
 
 ```js
 Array.isArray([]) // true
@@ -95,27 +97,47 @@ arr.forEach(console.log)
 arr.join() // '4,5,5,6'
 arr.join('') // '4556'
 arr.join('-') // '4-5-5-6'
+```
 
+### Methods that mutate
+
+```js
 // mutable operations
-const mu = (fn) => {
-  let mutableArr = [...arr]
-  fn(mutableArr)
-  mutableArr
-}
+/*const m = f => {
+  const arr = ['a', 'b', 'c']
+  console.log(f(arr))
+  return arr
+}*/
+let arr;
+const reset = () => { arr = ['a', 'b', 'c'] }
 
-mu(a => a.fill(5)) // [5, 5, 5, 5]
-// push - Append element.
-mu(a => a.push(7)) // 5 [4, 5, 5, 6, 7]
-// unshift - Prepend element.
-mu(a => a.unshift(3)) // 5 [3, 4, 5, 5, 6]
-// pop - Remove last element.
-mu(a => a.pop()) // 6 [4, 5, 5]
-// shift - Remove first element.
-mu(a => a.shift() // 4 [5, 5, 6]
+arr.fill('x') // ['x', 'x', 'x'] ['x', 'x', 'x']
+reset()
+// append element
+arr.push('x') // 4 ['a', 'b', 'c', 'x']
+reset()
+// prepend element
+arr.unshift('x') // 4 ['x', 'a', 'b', 'c']
+reset()
+// remove last element
+arr.pop() // 'c' ['a', 'b']
+reset()
+// remove first element
+arr.shift() // 'a' ['b', 'c']
+reset()
+arr.reverse() // ['c', 'b', 'a'] ['c', 'b', 'a']
+reset()
 
-mu(a => a.reverse()) // [6, 5, 5, 4] [6, 5, 5, 4]
-mu(a => a.splice(2, 0, 7)) // [] [4, 5, 7, 5, 6]
-
+const i = 1
+// update at i
+arr.splice(i, 1, 'x') // ['b'] ['a', 'b, 'c']
+reset()
+// insert at i
+arr.splice(i, 0, 'x') // [] ['a', 'x', 'b', 'd']
+reset()
+// remove at i
+arr.slice(i, 1) // ['b'] ['a', 'd']
+reset()
 ```
 
 ## for...in
