@@ -102,14 +102,9 @@ arr.join('-') // '4-5-5-6'
 ### Methods that mutate
 
 ```js
-// mutable operations
-/*const m = f => {
-  const arr = ['a', 'b', 'c']
-  console.log(f(arr))
-  return arr
-}*/
 let arr;
 const reset = () => { arr = ['a', 'b', 'c'] }
+reset()
 
 arr.fill('x') // ['x', 'x', 'x'] ['x', 'x', 'x']
 reset()
