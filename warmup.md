@@ -144,3 +144,8 @@ for (let a in {a: 5, b: 6}) console.log(a)
 for (let a in [5, 6]) console.log(a)
 
 ##
+
+## Functions
+
+```js
+```
