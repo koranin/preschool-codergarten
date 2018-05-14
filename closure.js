@@ -1,14 +1,25 @@
-console.log((function () {
+/*console.log((function () {
   this.a = 1;
-}).prototype.a)
+}).prototype.a);*/
 
+let a = 1;
 
+let f = function () { console.log('one', a); }
+
+function closure() {
+  let a = 2;
+  setTimeout(
+    function () { console.log('two', a); },
+    1000
+  );
+  setTimeout(f, 1000);
+  console.log('complete');
+};
+
+closure();
 
 /*
-
 console.log(this === global)
-
-
 
 const f = function(cb) {
   let b = 2;
