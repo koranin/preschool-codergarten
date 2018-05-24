@@ -84,7 +84,7 @@ arr.includes(4) // true
 arr.includes(3) // false
 // find
 arr.find(a => a > 5) // 6
-arr.indexOf(5) // 1 
+arr.indexOf(5) // 1
 arr.lastIndexOf(5) // 2
 
 // common operations
@@ -135,13 +135,38 @@ arr.slice(i, 1) // ['b'] ['a', 'd']
 reset()
 ```
 
+### Tips
+
 ## for...in
 
-for (let a in {a: 5, b: 6}) console.log(a)
+Iterates over object properties
 
+```js
+for (const prop in {a:1, b:1, c:1}) {
+  console.log(prop); // a b c
+}
+
+for (const i in [4, 5, 6]) {
+   console.log(i); // 0 1 2
+}
+
+for (const i in 'abc') {
+  console.log(i); // a b c
+}
+```
 ## for..of
 
-for (let a in [5, 6]) console.log(a)
+Iterates over `iterable objects`
+
+```js
+for (const num of [4, 5, 6]) {
+  console.log(num); // 4 5 6
+}
+
+for (const ch of 'abc') {
+  console.log(ch); // a b c
+}
+```
 
 ##
 
