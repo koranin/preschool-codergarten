@@ -7,6 +7,7 @@ If your terminal is overflow and you wanna clear screen use `console.log('\033c'
 * [Types](#types)
 * [Objects](#objects)
 * [Arrays](#arrays)
+* [Strings](#strings)
 
 ## Types <a name="types"></a>
 
@@ -51,9 +52,10 @@ typeof new class {}
 
 ## Objects <a name="objects"></a>
 
-```js
 
-const obj = { 0: 'a', 1: 'b' }
+
+```js
+let obj = { 0: 'a', 1: 'b' }
 Object.keys(obj)     // ['0', '1']
 Object.values(obj)   // ['a', 'b']
 Object.entries(obj)  // [['0', 'a'], ['1', 'b']]
@@ -62,7 +64,16 @@ const arr = ['a', 'b']
 Object.keys(arr)     // ['0', '1']
 Object.values(arr)   // ['a', 'b']
 Object.entries(arr)  // [['0', 'a'], ['1', 'b']]
+
+// preserves order of property that are added
+let o = {} // {}
+o.b = 0 // {b: 0}
+o['a'] = 0 // {b:0, a:0}
+o[4] = 0 // {'2': 0, b: 0, a: 0}
+o['3'] = 0 // {'3': 0, '4': 0, b: 0, a: 0}
+
 ```
+
 
 ## Arrays <a name="arrays"></a>
 
@@ -99,40 +110,46 @@ arr.join('') // '4556'
 arr.join('-') // '4-5-5-6'
 ```
 
+## Strings <a name="strings"></a>
+
+```js
+
+```
+
 ### Methods that mutate
 
 ```js
-let arr;
-const reset = () => { arr = ['a', 'b', 'c'] }
-reset()
+let abc = ['a', 'b', 'c'];
 
+let arr = [...abc];
 arr.fill('x') // ['x', 'x', 'x'] ['x', 'x', 'x']
-reset()
+
 // append element
+arr = [...abc];
 arr.push('x') // 4 ['a', 'b', 'c', 'x']
-reset()
+
 // prepend element
+arr = [...abc];
 arr.unshift('x') // 4 ['x', 'a', 'b', 'c']
-reset()
+
 // remove last element
+arr = [...abc];
 arr.pop() // 'c' ['a', 'b']
-reset()
+
 // remove first element
+arr = [...abc];
 arr.shift() // 'a' ['b', 'c']
-reset()
+
+arr = [...abc];
 arr.reverse() // ['c', 'b', 'a'] ['c', 'b', 'a']
-reset()
 
 const i = 1
 // update at i
 arr.splice(i, 1, 'x') // ['b'] ['a', 'b, 'c']
-reset()
 // insert at i
 arr.splice(i, 0, 'x') // [] ['a', 'x', 'b', 'd']
-reset()
 // remove at i
 arr.slice(i, 1) // ['b'] ['a', 'd']
-reset()
 ```
 
 ### Tips
@@ -173,4 +190,5 @@ for (const ch of 'abc') {
 ## Functions
 
 ```js
+
 ```
